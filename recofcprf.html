@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #000;
+            background-image: url('police-background.jpg'); /* Adicione a URL da imagem de fundo desejada */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* Estilo do cabeçalho com tema da PRF */
+        header {
+            background-color: #043c80;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Adicionando margem entre o cabeçalho e o corpo */
+        header + .quiz-container {
+            margin-top: 20px;
+        }
+
+        .quiz-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com opacidade */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin: 0;
+            color: #000000;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        button {
+            display: block;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p#resultado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-color: #d3d3d3;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Estilo do input e botão para copiar */
+        #info-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #info-input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #copiar-botao {
+            display: none;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #copiar-botao:hover {
+            background-color: #0056b3;
+        }
+
+        #capturar-botao {
+            display: none;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #capturar-botao:hover {
+            background-color: #0056b3;
+        }
+
+        /* Layout em grade para informações */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Questionário De Recrutamento</h1>
+        <p>Marque as respostas do aluno e atribua os pontos conforme necessário.</p>
+    </header>
+
+    <div class="quiz-container">
+        <div class="question">
+            <h3>10 códigos Q e seus respectivos significados: </h3>
+            <label>
+                <input type="checkbox" name="resposta1" value="0"> Acertou 1 ou menos
+            </label>
+            <label>
+                <input type="checkbox" name="resposta1" value="3"> Acertou 3
+            </label>
+            <label>
+                <input type="checkbox" name="resposta1" value="5"> Acertou 5
+            </label>
+            <label>
+                <input type="checkbox" name="resposta1" value="7"> Acertou 7
+            </label>
+            <label>
+                <input type="checkbox" name="resposta1" value="10"> Acertou 10
+            </label>
+        </div>
+        <div class="question">
+            <h3>Códigos de patrulha (0 ao 7):</h3>
+            <label>
+                <input type="checkbox" name="resposta2" value="0"> Acertou 1 ou menos
+            </label>
+            <label>
+                <input type="checkbox" name="resposta2" value="3"> Acertou 3
+            </label>
+            <label>
+                <input type="checkbox" name="resposta2" value="5"> Acertou 5
+            </label>
+            <label>
+                <input type="checkbox" name="resposta2" value="7"> Acertou 7
+            </label>
+        </div>
+        <div class "question">
+            <h3>Função do P1, P2, P3, P4 na QSV</h3>
+            <label>
+                <input type="checkbox" name="resposta3" value="0"> Não sabe
+            </label>
+            <label>
+                <input type="checkbox" name="resposta3" value="5"> Resposta aproximada
+            </label>
+            <label>
+                <input type="checkbox" name="resposta3" value="0"> Respondeu corretamente
+            </label>
+        </div>
+        <div class="question">
+            <h3>Qual a função de um Policial Rodoviário Federal </h3>
+            <label>
+                <input type="checkbox" name="resposta4" value="0"> Não sabe
+            </label>
+            <label>
+                <input type="checkbox" name="resposta4" value="5"> Resposta aproximada
+            </label>
+            <label>
+                <input type="checkbox" name="resposta4" value="10"> Respondeu corretamente
+            </label>
+        </div>
+        <div class="question">
+            <h3>O que é a PRF? </h3>
+            <label>
+                <input type="checkbox" name="resposta5" value="0"> Não sabe
+            </label>
+            <label>
+                <input type="checkbox" name="resposta5" value="5"> Resposta aproximada
+            </label>
+            <label>
+                <input type="checkbox" name="resposta5" value="10"> Respondeu corretamente
+            </label>
+        </div>
+        <div class="question">
+            <h3>Como é feita uma revista em um sexo oposto?</h3>
+            <label>
+                <input type="checkbox" name="resposta6" value="0"> Não sabe
+            </label>
+            <label>
+                <input type="checkbox" name="resposta6" value="5"> Resposta aproximada
+            </label>
+            <label>
+                <input type="checkbox" name="resposta6" value="10"> Respondeu corretamente
+            </label>
+        </div>
+        <div class="question">
+            <h3>Modulação de código 0:</h3>
+            <label>
+                <input type="checkbox" name="resposta7" value="0"> Ruim
+            </label>
+            <label>
+                <input type="checkbox" name="resposta7" value="5"> Mediana
+            </label>
+            <label>
+                <input type="checkbox" name="resposta7" value="10"> Boa
+            </label>
+        </div>
+        <div class="question">
+            <h3>Modulação a caminho de uma ocorrência de disparos:</h3>
+            <label>
+                <input type="checkbox" name="resposta8" value="0"> Ruim
+            </label>
+            <label>
+                <input type="checkbox" name="resposta8" value="5"> Mediana
+            </label>
+            <label>
+                <input type="checkbox" name="resposta8" value="10"> Boa
+            </label>
+        </div>
+        <div class="question">
+            <h3>Modulação de acompanhamento:</h3>
+            <label>
+                <input type="checkbox" name="resposta9" value="0"> Ruim
+            </label>
+            <label>
+                <input type="checkbox" name="resposta9" value="5"> Mediana
+            </label>
+            <label>
+                <input type="checkbox" name="resposta9" value="10"> Boa
+            </label>
+        </div>
+        <div class="question">
+            <h3>Cite a lei de miranda:</h3>
+            <label>
+                <input type="checkbox" name="resposta10" value="0"> Ruim
+            </label>
+            <label>
+                <input type="checkbox" name="resposta10" value="5"> Mediana
+            </label>
+            <label>
+                <input type="checkbox" name="resposta10" value="10"> Boa
+            </label>
+        </div>
+        <h3>
+            <font color="#b50000">🔹 Pontuação: <font color="#000000">Acima de 60 pontos para aprovação</font>
+            </font>
+        </h3>
+        <font color="#b50000">
+            <h4>
+                <font color="#b50000">🔹 Modulação: <font color="#000000">Se não souber modular será reprovado.
+                    </font>
+                </font>
+            </h4>
+            <font color="#b50000">
+                <h4>
+                    <font color="#b50000">🔹 Cola ou suspeita de call externa: <font color="#000000">Pergunte a
+                            coloração dos códigos de patrulha, caso acerte zere a nota!</font>
+                    </font>
+                </h4>
+                <font color="#b50000">
+                    <h4>
+                        <font color="#b50000">🔹 Dificuldade para pular a barreira: <font color="#000000">Pule a
+                                pergunta e dê nota zero.</font>
+                        </font>
+                    </h4>
+                    <font color="#b50000">
+                        <h4>
+                            <font color="#b50000">🔹 Zaralho, falta de respeito ou qualquer outra alteração não
+                                deverá ser tolerada e o mesmo deverá ser expulso e punido, além de ser colocado na
+                                lista negra.</font>
+                        </h4>
+
+                        <h3>
+                            <font color="#b50000"> 🔹A CONDUTA E O RESPEITO DENTRO DA NOSSA CORPORAÇÃO SÃO
+                                INDISPENSÁVEIS! NÃO RECRUTE PESSOAS A QUAL VOCÊ AVALIE QUE RESULTARÁ EM DOR DE
+                                CABEÇA! </font>
+        <button onclick="avaliarRespostas()">Avaliar Respostas</button>
+        <p id="resultado"></p>
+
+        <!-- Layout em grade para informações -->
+        <div class="info-grid" id="info-container">
+            <label>Nome e passaporte do conscrito:</label>
+            <input type="text" id="passaporte-input" placeholder="Digite as informações">
+            <label>Data:</label>
+            <input type="text" id="data-input" placeholder="Digite as informações">
+            <label>Recrutador:</label>
+            <input type="text" id="recrutador-input" placeholder="Digite as informações">
+            <label>Status:</label>
+            <input type="text" id="status-input" placeholder="Aguardando avaliação" readonly>
+        </div>
+
+        <!-- Botão para copiar -->
+        <button id="copiar-botao" onclick="copiarTexto()">Copiar</button>
+
+        <!-- Botão para capturar screenshot -->
+        <button id="capturar-botao" onclick="capturarScreenshot()">Capturar Screenshot</button>
+    </div>
+
+    <!-- Biblioteca html2canvas (mesmo código do original) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+
+    <script>
+        function avaliarRespostas() {
+            const checkboxes = [];
+
+            for (let i = 1; i <= 10; i++) {
+                checkboxes[i] = document.getElementsByName(`resposta${i}`);
+            }
+
+            let pontuacao = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                for (const checkbox of checkboxes[i]) {
+                    if (checkbox.checked) {
+                        pontuacao += parseInt(checkbox.value);
+                    }
+                }
+            }
+
+            const resultado = document.getElementById("resultado");
+            resultado.textContent = `Pontuação do Aluno: ${pontuacao}`;
+
+            // Verificar se a pontuação atingiu a média de aprovação (acima de 60)
+            if (pontuacao > 60) {
+                document.getElementById("status-input").value = "Aprovado";
+            } else {
+                document.getElementById("status-input").value = "Reprovado";
+            }
+
+            // Exibir o input e botões após a avaliação
+            const infoContainer = document.getElementById("info-container");
+            const copiarBotao = document.getElementById("copiar-botao");
+            const capturarBotao = document.getElementById("capturar-botao");
+
+            infoContainer.style.display = "block";
+            copiarBotao.style.display = "block";
+            capturarBotao.style.display = "block";
+        }
+
+        // Funções de copiar texto e capturar screenshot (código do original)
+        function copiarTexto() {
+            const statusInput = document.getElementById("status-input");
+            statusInput.select();
+            document.execCommand("copy");
+        }
+
+        function capturarScreenshot() {
+            html2canvas(document.body).then(function(canvas) {
+                const screenshotData = canvas.toDataURL("image/png");
+                const a = document.createElement('a');
+                a.href = screenshotData;
+                a.download = 'screenshot.png';
+                a.click();
+            });
+        }
+    </script>
+</body>
+</html>
